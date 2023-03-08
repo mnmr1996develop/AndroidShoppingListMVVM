@@ -12,7 +12,7 @@ import java.util.List;
 public interface ShoppingListDAO {
 
     @Insert
-    void insetShoppingListItem9(ShoppingListItem shoppingListItem);
+    void insetShoppingListItem(ShoppingListItem shoppingListItem);
 
     @Query("DELETE FROM shopping_list_table")
     void deleteShoppingList();

@@ -18,7 +18,7 @@ public abstract class ShoppingListRoomDatabase extends RoomDatabase {
 
     public static final int NUMBER_OF_THREADS = 4;
 
-    private static final ExecutorService databaseWriterExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+    public static final ExecutorService databaseWriterExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
     public static ShoppingListRoomDatabase getInstance(Context context){
         if (INSTANCE == null){
