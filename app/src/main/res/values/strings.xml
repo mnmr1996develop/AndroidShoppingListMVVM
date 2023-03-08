@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android Shopping List</string>
+    <string name="insert_shopping_list_item">Insert shopping list item</string>
 </resources>
