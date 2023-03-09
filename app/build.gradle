@@ -45,7 +45,6 @@ dependencies {
 
     // Lifecycle Components
     def lifecycle_version = "2.6.0"
-    // ViewModel
-    
+
 
 }

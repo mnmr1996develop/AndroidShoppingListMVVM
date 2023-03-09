@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import com.michaelrichards.androidshoppinglist.room_database.ShoppingListItem;
 
 public class ItemsListAdapter extends ListAdapter<ShoppingListItem, ItemViewHolder> {
-    protected ItemsListAdapter(@NonNull DiffUtil.ItemCallback<ShoppingListItem> diffCallback) {
+    public ItemsListAdapter(@NonNull DiffUtil.ItemCallback<ShoppingListItem> diffCallback) {
         super(diffCallback);
     }
 
