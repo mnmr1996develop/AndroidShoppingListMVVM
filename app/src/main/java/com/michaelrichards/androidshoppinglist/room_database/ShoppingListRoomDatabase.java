@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {ShoppingListItem.class}, version = 1, exportSchema = false)
+@Database(entities = {ShoppingListItem.class}, version = 2, exportSchema = false)
 public abstract class ShoppingListRoomDatabase extends RoomDatabase {
 
     public abstract ShoppingListDAO mShoppingListDAO();
@@ -42,10 +42,10 @@ public abstract class ShoppingListRoomDatabase extends RoomDatabase {
                 dao.deleteShoppingList();
 
                 //add some
-                ShoppingListItem shoppingListItem = new ShoppingListItem("Laundry Detergent");
+                ShoppingListItem shoppingListItem = new ShoppingListItem("Laundry Detergent", 2);
                 dao.insetShoppingListItem(shoppingListItem);
 
-                shoppingListItem = new ShoppingListItem("Eggs");
+                shoppingListItem = new ShoppingListItem("Eggs", 3);
                 dao.insetShoppingListItem(shoppingListItem);
             });
         }

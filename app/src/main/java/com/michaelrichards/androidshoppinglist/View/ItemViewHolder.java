@@ -12,19 +12,25 @@ import com.michaelrichards.androidshoppinglist.R;
 
 public class ItemViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView mTextView;
+    private TextView mItemNameTextview;
+    private TextView mItemAmountTextView;
 
     private ItemViewHolder(@NonNull View itemView) {
         super(itemView);
-        mTextView = itemView.findViewById(R.id.textShoppingListItem);
+        mItemNameTextview = itemView.findViewById(R.id.textShoppingListItem);
+        mItemAmountTextView = itemView.findViewById(R.id.textShoppingListAmount);
+    }
+    public TextView getItemName() {
+        return mItemNameTextview;
     }
 
-    public TextView getTextView() {
-        return mTextView;
+    public TextView getItemAmount() {
+        return mItemAmountTextView;
     }
 
-    public void bind(String text){
-        mTextView.setText(text);
+    public void bind(String text, int amount){
+        mItemNameTextview.setText(text);
+        mItemAmountTextView.setText(String.valueOf(amount));
     }
 
     public static ItemViewHolder create(ViewGroup parent){

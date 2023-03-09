@@ -11,9 +11,12 @@ import android.widget.Toast;
 
 public class NewItemActivity extends AppCompatActivity {
 
-    private  EditText editText;
+   
+    private  EditText editItemName;
+    private EditText editItemAmount;
     private static final String TAG = "NewItemActivity";
-    public static final String NEW_MARTIAL_ART_KEY = "com.michaelrichards.androidshoppinglist.GET_BACK_SHOPPING_LIST";
+    public static final String NEW_MARTIAL_ART_KEY_ITEM = "com.michaelrichards.androidshoppinglist.GET_BACK_SHOPPING_LIST_ITEM";
+    public static final String NEW_MARTIAL_ART_KEY_AMOUNT = "com.michaelrichards.androidshoppinglist.GET_BACK_SHOPPING_LIST_AMOUNT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +24,19 @@ public class NewItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_item);
 
         Button buttonAdd = findViewById(R.id.addItembutton);
-        editText = findViewById(R.id.editShoppingListItem);
+        editItemName = findViewById(R.id.editShoppingListItem);
+        editItemAmount = findViewById(R.id.editShoppingListAmount);
 
         buttonAdd.setOnClickListener(view -> {
             Intent getBackIntent = new Intent();
-            if (TextUtils.isEmpty(editText.getText())){
+            if (TextUtils.isEmpty(editItemName.getText())){
                 setResult(RESULT_CANCELED, getBackIntent);
             }
             else {
-                String shoppingListItem = editText.getText().toString();
-                getBackIntent.putExtra(NEW_MARTIAL_ART_KEY , shoppingListItem);
+                String shoppingListItemName = editItemName.getText().toString();
+                int shoppingListAmount = Integer.parseInt(editItemAmount.getText().toString());
+                getBackIntent.putExtra(NEW_MARTIAL_ART_KEY_ITEM , shoppingListItemName);
+                getBackIntent.putExtra(NEW_MARTIAL_ART_KEY_AMOUNT, shoppingListAmount);
                 setResult(RESULT_OK, getBackIntent);
             }
 

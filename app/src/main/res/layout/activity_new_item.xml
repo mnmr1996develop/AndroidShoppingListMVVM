@@ -6,21 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".NewItemActivity">
 
-    <EditText
-        android:id="@+id/editShoppingListItem"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginHorizontal="15dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
-        android:hint="@string/shopping_list_item"
-        android:padding="@dimen/edit_text_padding"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <EditText
+            android:id="@+id/editShoppingListItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:layout_marginHorizontal="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:hint="@string/shopping_list_item"
+            android:padding="@dimen/edit_text_padding"/>
+
+        <EditText
+            android:id="@+id/editShoppingListAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:layout_marginHorizontal="15dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="@string/amount"
+            android:padding="@dimen/edit_text_padding"/>
+
+    </LinearLayout>
+
+
 
     <Button
         android:id="@+id/addItembutton"
@@ -28,7 +51,7 @@
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         android:text="@string/add_item"
-        app:layout_constraintTop_toBottomOf="@+id/editShoppingListItem"
+        app:layout_constraintTop_toBottomOf="@+id/ll"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="20dp"

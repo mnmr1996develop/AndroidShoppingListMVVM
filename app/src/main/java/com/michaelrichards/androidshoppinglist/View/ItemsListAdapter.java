@@ -22,19 +22,20 @@ public class ItemsListAdapter extends ListAdapter<ShoppingListItem, ItemViewHold
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         ShoppingListItem curr = getItem(position);
-        holder.bind(curr.getItem());
+
+        holder.bind(curr.getItem(), curr.getAmountNeeded());
     }
 
     public static class ShoppingListDiff extends DiffUtil.ItemCallback<ShoppingListItem>{
 
         @Override
         public boolean areItemsTheSame(@NonNull ShoppingListItem oldItem, @NonNull ShoppingListItem newItem) {
-            return oldItem.equals(newItem);
+            return oldItem == newItem;
         }
 
         @Override
         public boolean areContentsTheSame(@NonNull ShoppingListItem oldItem, @NonNull ShoppingListItem newItem) {
-            return oldItem.getItem().equals(newItem.getItem());
+            return oldItem.equals(newItem);
         }
     }
 
